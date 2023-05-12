@@ -1,0 +1,18 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+    <article class="media content-section">
+    <h2 class="article-title">Restaurants</a></h2>
+    </article>
+    {% for restaurant in restaurants %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="article-title" href="#">{{ restaurant.RESTAURANT_NAME }}</a>
+              <small class="text-muted">{{ restaurant.RESTAURANT_LOCATION }}</small>
+            </div>
+            <h3><a class="mr-2" href="{% url 'restaurant-detail' restaurant.id %}">{{ restaurant.RESTAURANT_NAME }}</a></h3>
+            <p class="article-content">Rating :{{ restaurant.RATING }}/5</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <!--<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">-->
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.username }}</a>
+        <small class="text-muted">{{ object.first_name }} {{ object.last_name }}</small>
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'cust-update' object.id %}">Update</a>
+        </div>
+      </div>
+      <h5 class="article-title">DETAILS</h5>
+      <p class="article-content">email: {{ object.email }}</p>
+      <p class="article-content">tel: {{ object.tel }}</p>
+      <p class="article-content">DOB: {{ object.DOB }}</p>
+      <p class="article-content">tablebook: {{ object.tablebook }}</p>
+      <p class="article-content">orders: {{ object.orders }}</p>
+      <p class="article-content">feedback: {{ object.feedback }}</p>
+    </div>
+  </article>
+{% endblock content %}

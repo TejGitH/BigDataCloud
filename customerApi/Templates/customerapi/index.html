@@ -1,0 +1,16 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+      <article class="media content-section">
+      <h2 class="article-title">Customers</a></h2>
+      </article>
+    {% for cust in customer %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="article-title" href="#">{{ cust.username }}</a>
+            </div>
+            <b>Customer Name: </b><a class="mr-2" href="{% url 'cust-detail' cust.id %}">{{ cust.first_name }} {{cust.last_name}}</a>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+      <article class="media content-section">
+      <h2 class="article-title">Incentives Record</a></h2>
+      </article>
+    {% for incen in incentive %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="article-title" href="#">{{ incen.username }}</a>
+            </div>
+            <b>Customer Name: </b><a class="mr-2" href="{% url 'cust-detail' incen.id %}">{{ incen.first_name }} {{incen.last_name}}</a>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

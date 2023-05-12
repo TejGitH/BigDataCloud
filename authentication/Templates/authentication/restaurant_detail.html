@@ -1,0 +1,21 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <!--<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">-->
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.RESTAURANT_NAME }}</a>
+        <small class="text-muted">{{ object.RESTAURANT_LOCATION }}</small>
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'restaurant-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'restaurant-delete' object.id %}">Delete</a>
+        </div>
+        
+      </div>
+      <h2 class="article-title">DETAILS</h2>
+      <p class="article-content">Ratings: {{ object.RATING }}</p>
+      <p class="article-content">Cuisine: {{ object.CUISINE_TYPE }}</p>
+      <p class="article-content">Status: {{ object.RESTAURANT_STATUS }}</p>
+    </div>
+  </article>
+{% endblock content %}
